@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zermango Pro | Gaming Tools & License Dashboard</title>
+  <title>ModGameiOS | Hệ Thống Bán Key & Game Tools iOS VIP</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -21,14 +21,15 @@
           colors: {
             brand: {
               50: '#eef2ff',
-              500: '#6366f1',
-              600: '#4f46e5',
+              500: '#0ea5e9',
+              600: '#0284c7',
               dark: '#08090d',
               panel: '#0f111a',
               card: '#151824',
               border: '#23283b',
-              neon: '#06b6d4',
-              accent: '#8b5cf6'
+              neon: '#38bdf8',
+              accent: '#818cf8',
+              ios: '#0071e3'
             }
           },
           fontFamily: {
@@ -48,7 +49,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -64,12 +64,11 @@
       background: #3b425f;
     }
 
-    /* Gradient Background Glow */
     .glow-cyan {
-      box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.35);
+      box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.35);
     }
-    .glow-purple {
-      box-shadow: 0 0 25px -5px rgba(139, 92, 246, 0.35);
+    .glow-ios {
+      box-shadow: 0 0 25px -5px rgba(0, 113, 227, 0.4);
     }
 
     .badge-pulse {
@@ -80,7 +79,6 @@
       50% { opacity: 0.6; transform: scale(1.1); }
     }
 
-    /* Toast */
     #toast-container {
       position: fixed;
       bottom: 1.5rem;
@@ -106,15 +104,16 @@
     <!-- Brand Logo -->
     <div class="p-5 border-b border-brand-border flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg glow-cyan">
-          Z
+        <!-- Apple & Gaming Icon -->
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-sky-500 via-indigo-500 to-blue-600 flex items-center justify-center text-white font-extrabold text-xl shadow-lg glow-ios">
+          
         </div>
         <div>
-          <h1 class="text-base font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-indigo-300 to-purple-400 uppercase">
-            ZERMANGO
+          <h1 class="text-base font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-sky-400 via-indigo-300 to-blue-400 uppercase">
+            ModGameiOS
           </h1>
-          <span class="text-[10px] uppercase font-mono tracking-widest text-cyan-400 font-semibold flex items-center gap-1">
-            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 badge-pulse"></span> PRO PANEL v4.2
+          <span class="text-[10px] uppercase font-mono tracking-widest text-sky-400 font-semibold flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400 badge-pulse"></span> iOS PRO PANEL v4.2
           </span>
         </div>
       </div>
@@ -123,47 +122,47 @@
     <!-- User Mini Profile -->
     <div class="p-4 mx-3 my-3 rounded-xl bg-brand-card/80 border border-brand-border">
       <div class="flex items-center gap-3">
-        <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=100&auto=format&fit=crop&q=80" alt="Avatar" class="w-10 h-10 rounded-lg object-cover ring-2 ring-indigo-500/50" />
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Avatar" class="w-10 h-10 rounded-lg object-cover ring-2 ring-sky-500/50" />
         <div class="flex-1 truncate">
           <div class="text-xs font-bold text-white flex items-center gap-1">
-            <span id="user-display-name">DuyKhang_VIP</span>
-            <span class="text-[10px] px-1 rounded bg-amber-500/20 text-amber-400 font-semibold border border-amber-500/30">VIP</span>
+            <span id="user-display-name">NguyenNgocAnh</span>
+            <span class="text-[10px] px-1 rounded bg-sky-500/20 text-sky-400 font-semibold border border-sky-500/30">VIP</span>
           </div>
           <div class="text-[11px] text-gray-400 mt-0.5">
             Số dư: <strong id="user-balance" class="text-emerald-400 font-mono text-xs">0 ₫</strong>
           </div>
         </div>
       </div>
-      <button onclick="switchTab('topup')" class="w-full mt-3 py-1.5 px-3 rounded-lg bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-md">
-        <span>⚡ Nạp Tiền Ngay</span>
+      <button onclick="switchTab('topup')" class="w-full mt-3 py-1.5 px-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-md">
+        <span>⚡ Nạp Tiền MBBank</span>
       </button>
     </div>
 
     <!-- Nav Menu Items -->
     <nav class="flex-1 px-3 space-y-1 py-2 text-xs font-semibold">
-      <button onclick="switchTab('overview')" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-white bg-indigo-600/20 border border-indigo-500/40 transition text-left" data-tab="overview">
-        <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+      <button onclick="switchTab('overview')" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-white bg-sky-600/20 border border-sky-500/40 transition text-left" data-tab="overview">
+        <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
         <span>Bảng Điều Khiển</span>
       </button>
 
       <button onclick="switchTab('store')" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-brand-card transition text-left" data-tab="store">
         <svg class="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-        <span>Thuê Key / Mua Gói</span>
+        <span>Thuê Key ModGameiOS</span>
       </button>
 
       <button onclick="switchTab('keys')" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-brand-card transition text-left" data-tab="keys">
         <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
-        <span>Quản Lý Key & HWID</span>
+        <span>Quản Lý Key & UDID</span>
       </button>
 
       <button onclick="switchTab('topup')" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-brand-card transition text-left" data-tab="topup">
         <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <span>Nạp Tiền Tài Khoản</span>
+        <span>Nạp Tiền (VietQR MB)</span>
       </button>
 
       <button onclick="switchTab('download')" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-brand-card transition text-left" data-tab="download">
         <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-        <span>Tải Bộ Cài Đặt (Client)</span>
+        <span>Tải File .iPA (iOS) & APK</span>
       </button>
 
       <button onclick="switchTab('history')" class="nav-item w-full flex items-center gap-3 px-3.5 py-2.5 rounded-lg text-gray-400 hover:text-white hover:bg-brand-card transition text-left" data-tab="history">
@@ -172,12 +171,12 @@
       </button>
     </nav>
 
-    <!-- Support Link Footer in Sidebar -->
+    <!-- Support Link Footer -->
     <div class="p-4 border-t border-brand-border text-xs text-gray-400">
       <div class="flex items-center gap-2 mb-2 text-white font-semibold">
-        <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Server Status: Online
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Server Status: Safe 100%
       </div>
-      <p class="text-[11px] text-gray-400 leading-tight">Cần hỗ trợ? Liên hệ Zalo / Telegram Admin Duy Khang.</p>
+      <p class="text-[11px] text-gray-400 leading-tight">Admin: NGUYỄN NGỌC ANH • Zalo hỗ trợ 24/7</p>
     </div>
   </aside>
 
@@ -186,20 +185,18 @@
     <!-- Top Bar -->
     <header class="h-16 px-6 border-b border-brand-border bg-brand-panel/60 backdrop-blur flex items-center justify-between sticky top-0 z-20">
       <div class="flex items-center gap-3">
-        <span class="text-sm font-bold text-white uppercase tracking-wider" id="header-title">Bảng Điều Khiển</span>
-        <span class="text-xs px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 font-mono">Status: Safe & Undetected</span>
+        <span class="text-sm font-bold text-white uppercase tracking-wider" id="header-title">Bảng Điều Khiển ModGameiOS</span>
+        <span class="text-xs px-2 py-0.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/30 font-mono">No-Jailbreak • iOS 15 - 18+</span>
       </div>
 
       <div class="flex items-center gap-4">
-        <!-- Quick Deposit -->
         <button onclick="switchTab('topup')" class="px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-400 hover:bg-emerald-600/30 border border-emerald-500/30 text-xs font-semibold flex items-center gap-1.5 transition">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
           Nạp tiền
         </button>
 
-        <!-- Discord / Zalo Group -->
-        <a href="https://zalo.me" target="_blank" class="px-3 py-1.5 rounded-lg bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 border border-blue-500/30 text-xs font-semibold flex items-center gap-1 transition">
-          💬 Box Zalo VIP
+        <a href="https://zalo.me/0332466608" target="_blank" class="px-3 py-1.5 rounded-lg bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 border border-blue-500/30 text-xs font-semibold flex items-center gap-1 transition">
+          💬 Zalo: 0332466608
         </a>
       </div>
     </header>
@@ -209,12 +206,12 @@
 
       <!-- TAB 1: OVERVIEW (TỔNG QUAN) -->
       <section id="tab-overview" class="tab-pane space-y-6">
-        <div class="p-4 rounded-xl bg-gradient-to-r from-indigo-950/60 via-purple-950/40 to-brand-card border border-indigo-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="p-4 rounded-xl bg-gradient-to-r from-sky-950/60 via-blue-950/40 to-brand-card border border-sky-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div class="flex items-center gap-3">
-            <div class="p-2.5 rounded-lg bg-indigo-500/20 border border-indigo-500/40 text-cyan-400 text-lg">📢</div>
+            <div class="p-2.5 rounded-lg bg-sky-500/20 border border-sky-500/40 text-sky-400 text-lg">📢</div>
             <div>
-              <h4 class="text-sm font-bold text-white">Cập Nhật Phiên Bản Zermango Pro v4.2 Hoàn Tất!</h4>
-              <p class="text-xs text-gray-400 mt-0.5">Bypass 100% không bị văng game. Nạp tiền để thuê key và tải bản cài đặt.</p>
+              <h4 class="text-sm font-bold text-white">Chào mừng đến với hệ thống ModGameiOS!</h4>
+              <p class="text-xs text-gray-400 mt-0.5">Hỗ trợ đầy đủ iPhone/iPad (TrollStore, Esign, Scarlet, Sideloadly) không cần Jailbreak. An toàn 100%.</p>
             </div>
           </div>
           <button onclick="switchTab('topup')" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition whitespace-nowrap">
@@ -222,6 +219,7 @@
           </button>
         </div>
 
+        <!-- 4 Quick Stats Cards -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex items-center justify-between">
             <div>
@@ -233,23 +231,23 @@
 
           <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex items-center justify-between">
             <div>
-              <div class="text-xs text-gray-400 font-medium">Key Đang Hoạt Động</div>
-              <div class="text-xl font-bold text-cyan-400 font-mono mt-1" id="stat-active-keys">0 Key</div>
+              <div class="text-xs text-gray-400 font-medium">Key Đang Kích Hoạt</div>
+              <div class="text-xl font-bold text-sky-400 font-mono mt-1" id="stat-active-keys">0 Key</div>
             </div>
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-lg">🔑</div>
+            <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center font-bold text-lg">🔑</div>
           </div>
 
           <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex items-center justify-between">
             <div>
-              <div class="text-xs text-gray-400 font-medium">Lượt Reset HWID Còn</div>
+              <div class="text-xs text-gray-400 font-medium">Lượt Đổi Máy (UDID)</div>
               <div class="text-xl font-bold text-amber-400 font-mono mt-1" id="stat-hwid-resets">3 / 3</div>
             </div>
-            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-lg">💻</div>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-lg">📱</div>
           </div>
 
           <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex items-center justify-between">
             <div>
-              <div class="text-xs text-gray-400 font-medium">Máy Chủ Bypass</div>
+              <div class="text-xs text-gray-400 font-medium">Trạng Thái Hệ Thống</div>
               <div class="text-sm font-bold text-emerald-400 flex items-center gap-1.5 mt-2">
                 <span class="w-2 h-2 rounded-full bg-emerald-400 badge-pulse"></span> Hoạt Động Tốt
               </div>
@@ -258,13 +256,16 @@
           </div>
         </div>
 
+        <!-- Active Key List on Overview -->
         <div class="p-5 rounded-xl bg-brand-panel border border-brand-border space-y-4">
           <div class="flex items-center justify-between">
             <h3 class="text-sm font-bold text-white flex items-center gap-2">
-              <span>Danh Sách Key Của Bạn</span>
-              <span class="text-xs font-mono px-2 py-0.5 rounded bg-brand-card text-cyan-400 border border-brand-border">Zermango Pro</span>
+              <span>Danh Sách Key ModGameiOS</span>
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-brand-card text-sky-400 border border-brand-border">iOS VIP</span>
             </h3>
-            <button onclick="switchTab('store')" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300">+ Mua thêm key</button>
+            <button onclick="switchTab('store')" class="text-xs font-semibold text-sky-400 hover:text-sky-300">
+              + Mua thêm key
+            </button>
           </div>
 
           <div class="overflow-x-auto">
@@ -273,7 +274,7 @@
                 <tr class="text-gray-400 border-b border-brand-border pb-2">
                   <th class="py-2.5 px-3">Tên Gói</th>
                   <th class="py-2.5 px-3">Mã Key Bản Quyền</th>
-                  <th class="py-2.5 px-3">Thiết Bị (HWID)</th>
+                  <th class="py-2.5 px-3">Thiết Bị (UDID/HWID)</th>
                   <th class="py-2.5 px-3">Hạn Sử Dụng</th>
                   <th class="py-2.5 px-3 text-right">Thao Tác</th>
                 </tr>
@@ -287,68 +288,68 @@
       <!-- TAB 2: STORE / THUÊ KEY -->
       <section id="tab-store" class="tab-pane hidden space-y-6">
         <div>
-          <h2 class="text-base font-bold text-white">Bảng Giá Thuê Key Zermango VIP</h2>
-          <p class="text-xs text-gray-400 mt-1">Chọn gói phù hợp với nhu cầu. Key sẽ được kích hoạt tự động vào tài khoản ngay khi bấm mua.</p>
+          <h2 class="text-base font-bold text-white">Bảng Giá Thuê Key ModGameiOS VIP</h2>
+          <p class="text-xs text-gray-400 mt-1">Chọn gói phù hợp. Key tự động cấp vào tài khoản ngay khi số dư đủ tiền.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           <!-- Gói 1 Ngày -->
-          <div class="p-5 rounded-2xl bg-brand-card border border-brand-border hover:border-cyan-500/50 transition flex flex-col justify-between">
+          <div class="p-5 rounded-2xl bg-brand-card border border-brand-border hover:border-sky-500/50 transition flex flex-col justify-between">
             <div>
               <div class="flex justify-between items-start mb-3">
                 <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Trải Nghiệm</span>
                 <span class="text-[10px] px-2 py-0.5 rounded bg-brand-border text-gray-300">1 Ngày</span>
               </div>
-              <h3 class="text-lg font-bold text-white">Gói 24 Giờ</h3>
-              <div class="text-2xl font-black text-cyan-400 font-mono my-2">20.000 ₫</div>
+              <h3 class="text-lg font-bold text-white">Gói 24 Giờ iOS</h3>
+              <div class="text-2xl font-black text-sky-400 font-mono my-2">20.000 ₫</div>
               <ul class="text-xs text-gray-400 space-y-2 my-4">
-                <li class="flex items-center gap-2 text-gray-300">✓ Full tính năng Menu VIP</li>
-                <li class="flex items-center gap-2 text-gray-300">✓ Bypass Anti-Cheat</li>
-                <li class="flex items-center gap-2 text-gray-300">✓ Hỗ trợ 1 thiết bị</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Full Menu ModGameiOS</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Hỗ trợ iPhone / iPad</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Không cần Jailbreak</li>
               </ul>
             </div>
-            <button onclick="buyKey('Gói 1 Ngày', 20000, 1)" class="w-full py-2 rounded-xl bg-brand-border hover:bg-cyan-500 hover:text-black text-white font-bold text-xs transition">
+            <button onclick="buyKey('Gói 1 Ngày iOS', 20000, 1)" class="w-full py-2 rounded-xl bg-brand-border hover:bg-sky-500 hover:text-black text-white font-bold text-xs transition">
               Mua Ngay
             </button>
           </div>
 
           <!-- Gói 7 Ngày -->
-          <div class="p-5 rounded-2xl bg-brand-card border border-indigo-500/40 relative flex flex-col justify-between shadow-lg glow-purple">
-            <span class="absolute -top-2.5 right-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase">Phổ biến</span>
+          <div class="p-5 rounded-2xl bg-brand-card border border-sky-500/40 relative flex flex-col justify-between shadow-lg glow-ios">
+            <span class="absolute -top-2.5 right-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase">Phổ biến</span>
             <div>
               <div class="flex justify-between items-start mb-3">
-                <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Leo Rank</span>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300">7 Ngày</span>
+                <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Leo Rank</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-sky-500/20 text-sky-300">7 Ngày</span>
               </div>
-              <h3 class="text-lg font-bold text-white">Gói 1 Tuần</h3>
-              <div class="text-2xl font-black text-indigo-400 font-mono my-2">90.000 ₫</div>
+              <h3 class="text-lg font-bold text-white">Gói 1 Tuần iOS</h3>
+              <div class="text-2xl font-black text-sky-400 font-mono my-2">90.000 ₫</div>
               <ul class="text-xs text-gray-400 space-y-2 my-4">
-                <li class="flex items-center gap-2 text-gray-300">✓ Full tính năng Menu VIP</li>
-                <li class="flex items-center gap-2 text-gray-300">✓ Bypass Anti-Cheat mới nhất</li>
-                <li class="flex items-center gap-2 text-gray-300">✓ Reset HWID 1 lần/tuần</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Full Menu VIP ModGameiOS</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Cập nhật Bypass mới nhất</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Đổi máy UDID 1 lần/tuần</li>
               </ul>
             </div>
-            <button onclick="buyKey('Gói 7 Ngày', 90000, 7)" class="w-full py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition shadow">
+            <button onclick="buyKey('Gói 7 Ngày iOS', 90000, 7)" class="w-full py-2 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs transition shadow">
               Mua Ngay
             </button>
           </div>
 
           <!-- Gói 30 Ngày -->
-          <div class="p-5 rounded-2xl bg-brand-card border border-brand-border hover:border-purple-500/50 transition flex flex-col justify-between">
+          <div class="p-5 rounded-2xl bg-brand-card border border-indigo-500/50 transition flex flex-col justify-between">
             <div>
               <div class="flex justify-between items-start mb-3">
-                <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Chuyên Nghiệp</span>
-                <span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">30 Ngày</span>
+                <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Chuyên Nghiệp</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300">30 Ngày</span>
               </div>
-              <h3 class="text-lg font-bold text-white">Gói 1 Tháng</h3>
-              <div class="text-2xl font-black text-purple-400 font-mono my-2">250.000 ₫</div>
+              <h3 class="text-lg font-bold text-white">Gói 1 Tháng iOS</h3>
+              <div class="text-2xl font-black text-indigo-400 font-mono my-2">250.000 ₫</div>
               <ul class="text-xs text-gray-400 space-y-2 my-4">
-                <li class="flex items-center gap-2 text-gray-300">✓ Tiết kiệm 40% chi phí</li>
-                <li class="flex items-center gap-2 text-gray-300">✓ Ưu tiên hỗ trợ kỹ thuật 24/7</li>
-                <li class="flex items-center gap-2 text-gray-300">✓ Reset HWID 3 lần</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Tiết kiệm hơn 40% chi phí</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Hỗ trợ cài trực tiếp qua Ultraview</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Đổi máy UDID 3 lần</li>
               </ul>
             </div>
-            <button onclick="buyKey('Gói 30 Ngày', 250000, 30)" class="w-full py-2 rounded-xl bg-brand-border hover:bg-purple-600 text-white font-bold text-xs transition">
+            <button onclick="buyKey('Gói 30 Ngày iOS', 250000, 30)" class="w-full py-2 rounded-xl bg-brand-border hover:bg-indigo-600 text-white font-bold text-xs transition">
               Mua Ngay
             </button>
           </div>
@@ -360,29 +361,29 @@
                 <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">VIP PRO</span>
                 <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Vĩnh Viễn</span>
               </div>
-              <h3 class="text-lg font-bold text-white">Gói Lifetime</h3>
+              <h3 class="text-lg font-bold text-white">Gói Trọn Đời (Lifetime)</h3>
               <div class="text-2xl font-black text-amber-400 font-mono my-2">700.000 ₫</div>
               <ul class="text-xs text-gray-400 space-y-2 my-4">
-                <li class="flex items-center gap-2 text-gray-300">✓ Dùng trọn đời không giới hạn</li>
-                <li class="flex items-center gap-2 text-gray-300">✓ Cập nhật phiên bản tự động</li>
-                <li class="flex items-center gap-2 text-gray-300">✓ Reset HWID không giới hạn</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Dùng trọn đời trên iPhone/iPad</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Cập nhật chứng chỉ không bị thu hồi</li>
+                <li class="flex items-center gap-2 text-gray-300">✓ Đổi máy UDID không giới hạn</li>
               </ul>
             </div>
-            <button onclick="buyKey('Gói Vĩnh Viễn', 700000, 9999)" class="w-full py-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-extrabold text-xs transition">
+            <button onclick="buyKey('Gói Vĩnh Viễn iOS', 700000, 9999)" class="w-full py-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-extrabold text-xs transition">
               Mua Trọn Đời
             </button>
           </div>
         </div>
       </section>
 
-      <!-- TAB 3: QUẢN LÝ KEY & HWID -->
+      <!-- TAB 3: QUẢN LÝ KEY & UDID -->
       <section id="tab-keys" class="tab-pane hidden space-y-6">
         <div class="flex items-center justify-between">
           <div>
-            <h2 class="text-base font-bold text-white">Quản Lý Key Bản Quyền & Thiết Bị (HWID)</h2>
-            <p class="text-xs text-gray-400 mt-1">Quản lý các khóa bản quyền đã mua, sao chép key và đổi máy chơi game khi cần.</p>
+            <h2 class="text-base font-bold text-white">Quản Lý Key & Thiết Bị (UDID / HWID)</h2>
+            <p class="text-xs text-gray-400 mt-1">Quản lý mã key đã mua, đổi thiết bị iPhone/iPad khi chuyển máy.</p>
           </div>
-          <button onclick="switchTab('store')" class="px-3 py-1.5 rounded-lg bg-indigo-600 text-white text-xs font-bold">+ Thuê Key Mới</button>
+          <button onclick="switchTab('store')" class="px-3 py-1.5 rounded-lg bg-sky-600 text-white text-xs font-bold">+ Thuê Key Mới</button>
         </div>
 
         <div class="p-5 rounded-xl bg-brand-panel border border-brand-border space-y-4">
@@ -392,9 +393,9 @@
                 <tr class="text-gray-400 border-b border-brand-border pb-2">
                   <th class="py-2.5 px-3">Gói</th>
                   <th class="py-2.5 px-3">Mã Key</th>
-                  <th class="py-2.5 px-3">Thiết Bị Gắn Liền (HWID)</th>
+                  <th class="py-2.5 px-3">Thiết Bị Gắn Liền (UDID)</th>
                   <th class="py-2.5 px-3">Thời Hạn</th>
-                  <th class="py-2.5 px-3 text-right">Đổi Máy (Reset HWID)</th>
+                  <th class="py-2.5 px-3 text-right">Đổi Máy (Reset UDID)</th>
                 </tr>
               </thead>
               <tbody id="full-keys-table" class="divide-y divide-brand-border"></tbody>
@@ -403,32 +404,38 @@
         </div>
       </section>
 
-      <!-- TAB 4: NẠP TIỀN TÀI KHOẢN (VIETQR / THẺ CÀO) -->
+      <!-- TAB 4: NẠP TIỀN TÀI KHOẢN (VIETQR MBBANK CHÍNH CHỦ) -->
       <section id="tab-topup" class="tab-pane hidden space-y-6">
         <div>
-          <h2 class="text-base font-bold text-white">Nạp Tiền Vào Tài Khoản</h2>
-          <p class="text-xs text-gray-400 mt-1">Hệ thống xử lý tự động 24/7. Mỗi khi nạp, số dư của bạn sẽ được cộng dồn ngay lập tức.</p>
+          <h2 class="text-base font-bold text-white">Nạp Tiền Vào Tài Khoản ModGameiOS</h2>
+          <p class="text-xs text-gray-400 mt-1">Hệ thống chuyển khoản ngân hàng Quân Đội (MBBank) chính chủ. Quét mã QR để cộng tiền tự động.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <!-- Left: Nạp Ngân Hàng VietQR -->
+          <!-- Left: Nạp Ngân Hàng VietQR MBBank -->
           <div class="lg:col-span-2 p-5 rounded-2xl bg-brand-panel border border-brand-border space-y-4">
             <div class="flex items-center justify-between pb-3 border-b border-brand-border">
               <h3 class="text-sm font-bold text-white flex items-center gap-2">
-                <span>📱 Nạp Tự Động Qua VietQR (Khuyên dùng)</span>
+                <span>📱 Nạp Tự Động Qua VietQR MBBank</span>
                 <span class="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded font-mono">+0% phí</span>
               </h3>
+              
+              <!-- Tab chọn chế độ xem QR -->
+              <div class="flex items-center bg-brand-card p-1 rounded-lg border border-brand-border text-[11px]">
+                <button id="btn-qr-dynamic" onclick="toggleQrMode('dynamic')" class="px-2.5 py-1 rounded bg-sky-600 text-white font-semibold">QR Động Theo Tiền</button>
+                <button id="btn-qr-original" onclick="toggleQrMode('original')" class="px-2.5 py-1 rounded text-gray-400 hover:text-white font-semibold">Ảnh QR Gốc</button>
+              </div>
             </div>
 
             <!-- Mức nạp gợi ý -->
             <div>
               <label class="block text-xs font-semibold text-gray-300 mb-2">Chọn số tiền muốn nạp:</label>
               <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs font-mono">
-                <button onclick="selectTopupAmount(20000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-cyan-500 text-center font-bold">20.000 ₫</button>
-                <button onclick="selectTopupAmount(50000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-center font-bold">50.000 ₫</button>
-                <button onclick="selectTopupAmount(100000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-cyan-500 text-center font-bold">100.000 ₫</button>
-                <button onclick="selectTopupAmount(250000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-cyan-500 text-center font-bold">250.000 ₫</button>
-                <button onclick="selectTopupAmount(500000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-cyan-500 text-center font-bold">500.000 ₫</button>
+                <button onclick="selectTopupAmount(20000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold">20.000 ₫</button>
+                <button onclick="selectTopupAmount(50000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-sky-500 bg-sky-500/10 text-sky-400 text-center font-bold">50.000 ₫</button>
+                <button onclick="selectTopupAmount(100000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold">100.000 ₫</button>
+                <button onclick="selectTopupAmount(250000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold">250.000 ₫</button>
+                <button onclick="selectTopupAmount(500000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold">500.000 ₫</button>
               </div>
 
               <!-- Ô nhập số tiền tùy ý -->
@@ -441,28 +448,61 @@
                   min="10000"
                   placeholder="Nhập số tiền (ví dụ: 150000)..."
                   oninput="onCustomAmountInput(this.value)"
-                  class="w-full bg-brand-card border border-brand-border rounded-lg px-3 py-2 text-xs text-white font-mono focus:border-cyan-500 focus:outline-none"
+                  class="w-full bg-brand-card border border-brand-border rounded-lg px-3 py-2 text-xs text-white font-mono focus:border-sky-500 focus:outline-none"
                 />
               </div>
             </div>
 
             <!-- VietQR Display Box -->
             <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex flex-col sm:flex-row items-center gap-5">
-              <div class="bg-white p-2.5 rounded-xl shadow-md flex-shrink-0">
-                <img id="topup-qr-img" src="https://img.vietqr.io/image/970422-0987654321-compact2.png?amount=50000&addInfo=NAP%20DUYKHANG&accountName=ZERMANGO%20OFFICIAL" alt="VietQR" class="w-40 h-40 object-contain rounded" />
+              <!-- KHUNG HIỂN THỊ MÃ QR CHÍNH CHỦ MBBANK -->
+              <div class="bg-white p-2.5 rounded-2xl shadow-xl flex-shrink-0 relative overflow-hidden flex flex-col items-center">
+                <!-- QR Image container -->
+                <img
+                  id="topup-qr-img"
+                  src="https://img.vietqr.io/image/MB-0332466608-compact2.png?amount=50000&addInfo=NAP%20MODGAMEIOS&accountName=NGUYEN%20NGOC%20ANH"
+                  alt="VietQR MBBank"
+                  class="w-48 h-48 object-contain rounded-lg"
+                />
+                <img
+                  id="topup-qr-original-img"
+                  src="C:/Users/Admin/.gemini/antigravity/brain/c6b98134-b3b5-4f4c-846d-ab28e23bcb0a/.user_uploaded/media_1789633750796.jpg"
+                  alt="QR Gốc MBBank"
+                  class="w-48 h-auto object-contain rounded-lg hidden"
+                />
               </div>
-              <div class="text-xs space-y-2 flex-1 font-mono">
-                <div class="flex justify-between py-1 border-b border-brand-border text-gray-400">Ngân hàng: <span class="text-white font-bold">MB Bank</span></div>
-                <div class="flex justify-between py-1 border-b border-brand-border text-gray-400">Số tài khoản: <span class="text-cyan-400 font-bold select-all">0987654321</span></div>
-                <div class="flex justify-between py-1 border-b border-brand-border text-gray-400">Chủ tài khoản: <span class="text-white font-bold">ZERMANGO OFFICIAL</span></div>
-                <div class="flex justify-between py-1 border-b border-brand-border text-gray-400">Số tiền nạp: <span id="topup-amount-display" class="text-emerald-400 font-bold text-sm">50.000 ₫</span></div>
-                <div class="flex justify-between py-1 text-gray-400">Nội dung CK: <span class="text-amber-400 font-bold select-all">NAP DUYKHANG</span></div>
+
+              <!-- THÔNG TIN TÀI KHOẢN MBBANK CỦA BẠN -->
+              <div class="text-xs space-y-2 flex-1 font-mono w-full">
+                <div class="flex justify-between py-1.5 border-b border-brand-border text-gray-400">
+                  <span>Ngân hàng:</span>
+                  <span class="text-white font-bold flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-blue-500"></span> MB Bank (Quân Đội)
+                  </span>
+                </div>
+                <div class="flex justify-between py-1.5 border-b border-brand-border text-gray-400">
+                  <span>Số tài khoản (STK):</span>
+                  <span class="text-sky-400 font-bold select-all text-sm cursor-pointer" onclick="copyToClipboard('0332466608')" title="Bấm để sao chép">0332466608 📋</span>
+                </div>
+                <div class="flex justify-between py-1.5 border-b border-brand-border text-gray-400">
+                  <span>Chủ tài khoản:</span>
+                  <span class="text-white font-bold tracking-wide">NGUYEN NGOC ANH</span>
+                </div>
+                <div class="flex justify-between py-1.5 border-b border-brand-border text-gray-400">
+                  <span>Số tiền nạp:</span>
+                  <span id="topup-amount-display" class="text-emerald-400 font-bold text-sm">50.000 ₫</span>
+                </div>
+                <div class="flex justify-between py-1.5 text-gray-400">
+                  <span>Nội dung chuyển khoản:</span>
+                  <span class="text-amber-400 font-bold select-all cursor-pointer" onclick="copyToClipboard('NAP MODGAMEIOS')" title="Bấm để sao chép">NAP MODGAMEIOS 📋</span>
+                </div>
               </div>
             </div>
 
             <!-- Nút xác nhận nạp tiền -->
-            <button onclick="confirmTopup()" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-lg flex items-center justify-center gap-2">
-              <span>✓ Tôi Đã Chuyển Tiền (Cộng Tiền Tức Thì)</span>
+            <button onclick="confirmTopup()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-lg flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+              <span>Tôi Đã Chuyển Tiền (Cộng Tiền Tức Thì Vào Số Dư)</span>
             </button>
           </div>
 
@@ -476,7 +516,7 @@
                   <option value="Viettel">Viettel</option>
                   <option value="Vinaphone">Vinaphone</option>
                   <option value="Mobifone">Mobifone</option>
-                  <option value="Garena">Garena</option>
+                  <option value="Zing">Thẻ Zing</option>
                 </select>
               </div>
               <div>
@@ -497,7 +537,7 @@
                 <label class="block text-gray-300 mb-1">Số Serial</label>
                 <input id="card-seri" type="text" placeholder="Nhập số seri..." class="w-full bg-brand-card border border-brand-border rounded-lg p-2 text-white font-mono" />
               </div>
-              <button onclick="submitCardTopup()" class="w-full py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition mt-2">
+              <button onclick="submitCardTopup()" class="w-full py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold transition mt-2 shadow">
                 Nạp Thẻ Ngay
               </button>
             </div>
@@ -505,50 +545,60 @@
         </div>
       </section>
 
-      <!-- TAB 5: DOWNLOAD (TẢI BỘ CÀI ĐẶT) -->
+      <!-- TAB 5: DOWNLOAD (TẢI BỘ CÀI ĐẶT .IPA CHO IOS) -->
       <section id="tab-download" class="tab-pane hidden space-y-6">
         <div>
-          <h2 class="text-base font-bold text-white">Trung Tâm Tải Về (Download Center)</h2>
-          <p class="text-xs text-gray-400 mt-1">Tải xuống các bản cài đặt chính thức mới nhất cho Windows và Android.</p>
+          <h2 class="text-base font-bold text-white">Trung Tâm Tải Về ModGameiOS (.iPA & APK)</h2>
+          <p class="text-xs text-gray-400 mt-1">Hỗ trợ cài đặt trên iPhone / iPad qua TrollStore, Esign, Scarlet hoặc chứng chỉ P12.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <!-- iOS IPA Package -->
           <div class="p-5 rounded-2xl bg-brand-panel border border-brand-border space-y-4">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl font-bold">🪟</div>
+              <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-3xl font-bold">
+                
+              </div>
               <div>
-                <h3 class="text-sm font-bold text-white">Zermango Pro Client for PC</h3>
-                <span class="text-xs text-gray-400">Phiên bản v4.2.1 • 45 MB</span>
+                <h3 class="text-sm font-bold text-white">ModGameiOS Official (.iPA)</h3>
+                <span class="text-xs text-gray-400">Bản v4.2.0 • 65 MB • iOS 15 - 18+</span>
               </div>
             </div>
-            <p class="text-xs text-gray-400 leading-relaxed">Tương thích Windows 10/11 (64-bit). Hỗ trợ Gameloop, LDPlayer 9 và SmartGaGa.</p>
-            <button onclick="triggerFileDownload('Zermango_Pro_v4.2.1_Installer.exe')" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-lg">
+            <p class="text-xs text-gray-400 leading-relaxed">
+              File cài đặt nguyên gốc định dạng .iPA dành cho iPhone / iPad. Tương thích TrollStore, Esign, Gbox, Scarlet và Sideloadly trên máy tính.
+            </p>
+            <button onclick="triggerFileDownload('ModGameiOS_v4.2.0_VIP.ipa')" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold text-xs transition flex items-center justify-center gap-2 shadow-lg">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              Tải Bộ Cài Đặt PC (.exe)
+              Tải Gói File .iPA (iOS)
             </button>
           </div>
 
+          <!-- Android APK Package -->
           <div class="p-5 rounded-2xl bg-brand-panel border border-brand-border space-y-4">
             <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl font-bold">📱</div>
+              <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl font-bold">
+                📱
+              </div>
               <div>
-                <h3 class="text-sm font-bold text-white">Zermango Pro Mobile APK</h3>
-                <span class="text-xs text-gray-400">Phiên bản v2.8 • 18 MB</span>
+                <h3 class="text-sm font-bold text-white">ModGame Mobile APK</h3>
+                <span class="text-xs text-gray-400">Bản v2.8.2 • 25 MB • Android</span>
               </div>
             </div>
-            <p class="text-xs text-gray-400 leading-relaxed">Dành cho Android (Root hoặc No-Root). Hỗ trợ Android 10 đến Android 14. Menu nổi tiện lợi.</p>
-            <button onclick="triggerFileDownload('Zermango_Mobile_v2.8.apk')" class="w-full py-2.5 rounded-xl bg-brand-card hover:bg-brand-border text-white border border-brand-border font-bold text-xs transition flex items-center justify-center gap-2">
+            <p class="text-xs text-gray-400 leading-relaxed">
+              Bản APK dành cho thiết bị Android. Hỗ trợ Android 10 đến Android 15 không cần root máy.
+            </p>
+            <button onclick="triggerFileDownload('ModGame_Android_v2.8.2.apk')" class="w-full py-2.5 rounded-xl bg-brand-card hover:bg-brand-border text-white border border-brand-border font-bold text-xs transition flex items-center justify-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-              Tải APK Android (.apk)
+              Tải Gói File .APK (Android)
             </button>
           </div>
         </div>
 
         <div class="p-5 rounded-xl bg-brand-card border border-brand-border text-xs space-y-2 text-gray-400">
-          <h4 class="text-sm font-bold text-white">💡 Hướng Dẫn Kích Hoạt Nhanh:</h4>
-          <p>1. Tắt phần mềm diệt virus hoặc thêm thư mục cài đặt vào danh sách loại trừ (Exclusion).</p>
-          <p>2. Mở Zermango Client dưới quyền Administrator (`Run as Administrator`).</p>
-          <p>3. Dán mã Key bản quyền được cấp trong bảng điều khiển và bấm **Kích Hoạt (Login)**.</p>
+          <h4 class="text-sm font-bold text-white">💡 Hướng Dẫn Kích Hoạt Trên iPhone:</h4>
+          <p>1. Tải file `.ipa` về máy rồi mở bằng ứng dụng **TrollStore** hoặc **Esign** để ký chứng chỉ.</p>
+          <p>2. Mở game -> Bấm vào icon Menu ModGameiOS -> Dán mã Key được cấp -> Bấm **Kích Hoạt**.</p>
+          <p>3. Nếu gặp sự cố, nhắn tin Zalo: **0332466608** (Nguyễn Ngọc Anh) để được hỗ trợ qua Ultraview/Anydesk.</p>
         </div>
       </section>
 
@@ -556,7 +606,7 @@
       <section id="tab-history" class="tab-pane hidden space-y-6">
         <div>
           <h2 class="text-base font-bold text-white">Lịch Sử Biến Động Số Dư & Mua Key</h2>
-          <p class="text-xs text-gray-400 mt-1">Tất cả giao dịch nạp tiền và thuê gói của bạn.</p>
+          <p class="text-xs text-gray-400 mt-1">Tất cả giao dịch nạp tiền qua MBBank và thuê gói của bạn.</p>
         </div>
 
         <div class="p-5 rounded-xl bg-brand-panel border border-brand-border">
@@ -582,20 +632,20 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // ĐẶT SỐ DƯ BAN ĐẦU MẶC ĐỊNH LÀ 0
-    if (localStorage.getItem("zermango_v3_init") !== "true") {
-      localStorage.setItem("zermango_balance", 0);
-      localStorage.setItem("zermango_keys", JSON.stringify([]));
-      localStorage.setItem("zermango_tx", JSON.stringify([]));
-      localStorage.setItem("zermango_v3_init", "true");
+    // ĐẶT SỐ DƯ BAN ĐẦU MẶC ĐỊNH LÀ 0 CHO MODGAMEIOS
+    if (localStorage.getItem("modgameios_v1_init") !== "true") {
+      localStorage.setItem("modgameios_balance", 0);
+      localStorage.setItem("modgameios_keys", JSON.stringify([]));
+      localStorage.setItem("modgameios_tx", JSON.stringify([]));
+      localStorage.setItem("modgameios_v1_init", "true");
     }
 
-    let balance = parseInt(localStorage.getItem("zermango_balance")) || 0;
-    let hwidResets = parseInt(localStorage.getItem("zermango_hwid_resets")) || 3;
-    let currentTopupAmount = 50000; // Mặc định số tiền nạp đang chọn
+    let balance = parseInt(localStorage.getItem("modgameios_balance")) || 0;
+    let hwidResets = parseInt(localStorage.getItem("modgameios_hwid_resets")) || 3;
+    let currentTopupAmount = 50000;
     
-    let myKeys = JSON.parse(localStorage.getItem("zermango_keys")) || [];
-    let transactions = JSON.parse(localStorage.getItem("zermango_tx")) || [];
+    let myKeys = JSON.parse(localStorage.getItem("modgameios_keys")) || [];
+    let transactions = JSON.parse(localStorage.getItem("modgameios_tx")) || [];
 
     document.addEventListener("DOMContentLoaded", () => {
       updateUI();
@@ -620,22 +670,46 @@
 
       document.querySelectorAll(".nav-item").forEach(btn => {
         const isActive = btn.dataset.tab === tabId;
-        btn.classList.toggle("bg-indigo-600/20", isActive);
+        btn.classList.toggle("bg-sky-600/20", isActive);
         btn.classList.toggle("border", isActive);
-        btn.classList.toggle("border-indigo-500/40", isActive);
+        btn.classList.toggle("border-sky-500/40", isActive);
         btn.classList.toggle("text-white", isActive);
         btn.classList.toggle("text-gray-400", !isActive);
       });
 
       const titles = {
-        overview: "Bảng Điều Khiển Tổng Quan",
-        store: "Thuê Key / Mua Gói Zermango VIP",
-        keys: "Quản Lý Key Bản Quyền & HWID",
-        topup: "Nạp Tiền Tài Khoản Tự Động",
-        download: "Trung Tâm Tải Về Bản Cài Đặt",
+        overview: "Bảng Điều Khiển ModGameiOS",
+        store: "Thuê Key ModGameiOS VIP",
+        keys: "Quản Lý Key Bản Quyền & UDID",
+        topup: "Nạp Tiền Tài Khoản (MBBank 0332466608)",
+        download: "Tải Bản Cài Đặt .iPA Cho iOS & APK",
         history: "Lịch Sử Giao Dịch & Biến Động Số Dư"
       };
       if (titles[tabId]) document.getElementById("header-title").textContent = titles[tabId];
+    }
+
+    // Chuyển đổi giữa QR Động và Ảnh QR Gốc của người dùng
+    function toggleQrMode(mode) {
+      const dynamicImg = document.getElementById("topup-qr-img");
+      const originalImg = document.getElementById("topup-qr-original-img");
+      const btnDyn = document.getElementById("btn-qr-dynamic");
+      const btnOrig = document.getElementById("btn-qr-original");
+
+      if (mode === "original") {
+        dynamicImg.classList.add("hidden");
+        originalImg.classList.remove("hidden");
+        btnOrig.classList.add("bg-sky-600", "text-white");
+        btnOrig.classList.remove("text-gray-400");
+        btnDyn.classList.remove("bg-sky-600", "text-white");
+        btnDyn.classList.add("text-gray-400");
+      } else {
+        originalImg.classList.add("hidden");
+        dynamicImg.classList.remove("hidden");
+        btnDyn.classList.add("bg-sky-600", "text-white");
+        btnDyn.classList.remove("text-gray-400");
+        btnOrig.classList.remove("bg-sky-600", "text-white");
+        btnOrig.classList.add("text-gray-400");
+      }
     }
 
     // Chọn số tiền nạp từ các nút gợi ý
@@ -645,9 +719,9 @@
       
       document.querySelectorAll(".topup-pill").forEach(btn => {
         const matches = btn.textContent.replace(/\D/g, "") == amount;
-        btn.classList.toggle("border-cyan-500", matches);
-        btn.classList.toggle("bg-cyan-500/10", matches);
-        btn.classList.toggle("text-cyan-400", matches);
+        btn.classList.toggle("border-sky-500", matches);
+        btn.classList.toggle("bg-sky-500/10", matches);
+        btn.classList.toggle("text-sky-400", matches);
         btn.classList.toggle("border-brand-border", !matches);
         btn.classList.toggle("text-white", !matches);
       });
@@ -661,7 +735,7 @@
       if (num && num > 0) {
         currentTopupAmount = num;
         document.querySelectorAll(".topup-pill").forEach(btn => {
-          btn.classList.remove("border-cyan-500", "bg-cyan-500/10", "text-cyan-400");
+          btn.classList.remove("border-sky-500", "bg-sky-500/10", "text-sky-400");
           btn.classList.add("border-brand-border", "text-white");
         });
         updateTopupDisplay();
@@ -670,7 +744,8 @@
 
     function updateTopupDisplay() {
       document.getElementById("topup-amount-display").textContent = formatCurrency(currentTopupAmount);
-      document.getElementById("topup-qr-img").src = `https://img.vietqr.io/image/970422-0987654321-compact2.png?amount=${currentTopupAmount}&addInfo=NAP%20DUYKHANG&accountName=ZERMANGO%20OFFICIAL`;
+      // Cập nhật mã VietQR theo STK 0332466608 - NGUYEN NGOC ANH - MBBANK
+      document.getElementById("topup-qr-img").src = `https://img.vietqr.io/image/MB-0332466608-compact2.png?amount=${currentTopupAmount}&addInfo=NAP%20MODGAMEIOS&accountName=NGUYEN%20NGOC%20ANH`;
     }
 
     // XÁC NHẬN NẠP TIỀN (CỘNG DỒN TIỀN VÀO SỐ DƯ)
@@ -682,19 +757,18 @@
 
       // Cộng tiền trực tiếp vào tài khoản
       balance += currentTopupAmount;
-      localStorage.setItem("zermango_balance", balance);
+      localStorage.setItem("modgameios_balance", balance);
 
-      // Ghi lại lịch sử nạp
       const now = new Date();
       const timeStr = now.toLocaleDateString("vi-VN") + " " + now.toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' });
       transactions.unshift({
         time: timeStr,
-        content: `Nạp tiền tự động qua VietQR (${formatCurrency(currentTopupAmount)})`,
+        content: `Nạp tiền qua VietQR MBBank 0332466608 (${formatCurrency(currentTopupAmount)})`,
         amount: `+${formatCurrency(currentTopupAmount)}`,
         type: "plus",
         status: "Thành công"
       });
-      localStorage.setItem("zermango_tx", JSON.stringify(transactions));
+      localStorage.setItem("modgameios_tx", JSON.stringify(transactions));
 
       updateUI();
       renderTransactions();
@@ -713,9 +787,8 @@
         return;
       }
 
-      // Cộng tiền thẻ cào vào tài khoản
       balance += cardValue;
-      localStorage.setItem("zermango_balance", balance);
+      localStorage.setItem("modgameios_balance", balance);
 
       const now = new Date();
       const timeStr = now.toLocaleDateString("vi-VN") + " " + now.toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' });
@@ -726,7 +799,7 @@
         type: "plus",
         status: "Thành công"
       });
-      localStorage.setItem("zermango_tx", JSON.stringify(transactions));
+      localStorage.setItem("modgameios_tx", JSON.stringify(transactions));
 
       document.getElementById("card-pin").value = "";
       document.getElementById("card-seri").value = "";
@@ -739,31 +812,32 @@
     // Mua Key Bằng Số Dư
     function buyKey(packageName, price, days) {
       if (balance < price) {
-        showToast(`Số dư hiện tại (${formatCurrency(balance)}) không đủ! Vui lòng nạp thêm ${formatCurrency(price - balance)} để mua gói này.`, "danger");
+        showToast(`Số dư hiện tại (${formatCurrency(balance)}) không đủ! Vui lòng nạp thêm ${formatCurrency(price - balance)} để thuê gói này.`, "danger");
         switchTab("topup");
         return;
       }
 
       balance -= price;
-      localStorage.setItem("zermango_balance", balance);
+      localStorage.setItem("modgameios_balance", balance);
 
       const exp = new Date();
       exp.setDate(exp.getDate() + days);
       const expStr = days >= 9999 ? "Vĩnh viễn (Lifetime)" : exp.toLocaleDateString("vi-VN") + " 23:59";
 
-      const randomPart1 = Math.random().toString(36).substring(2, 6).toUpperCase();
-      const randomPart2 = Math.random().toString(36).substring(2, 6).toUpperCase();
+      // Sinh mã key theo tiền tố ModGameiOS
+      const r1 = Math.random().toString(36).substring(2, 6).toUpperCase();
+      const r2 = Math.random().toString(36).substring(2, 6).toUpperCase();
       const newKey = {
         id: "key-" + Date.now(),
         packageName: packageName,
-        keyCode: `ZMG-PRO-${randomPart1}-${randomPart2}-VIP`,
-        hwid: "Chưa kích hoạt",
+        keyCode: `MGI-VIP-${r1}-${r2}-PRO`,
+        hwid: "Chưa gắn UDID",
         expiresAt: expStr,
         status: "Active"
       };
 
       myKeys.unshift(newKey);
-      localStorage.setItem("zermango_keys", JSON.stringify(myKeys));
+      localStorage.setItem("modgameios_keys", JSON.stringify(myKeys));
 
       const now = new Date();
       const timeStr = now.toLocaleDateString("vi-VN") + " " + now.toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' });
@@ -774,7 +848,7 @@
         type: "minus",
         status: "Thành công"
       });
-      localStorage.setItem("zermango_tx", JSON.stringify(transactions));
+      localStorage.setItem("modgameios_tx", JSON.stringify(transactions));
 
       updateUI();
       renderKeys();
@@ -788,7 +862,7 @@
       const fullTable = document.getElementById("full-keys-table");
 
       if (myKeys.length === 0) {
-        const emptyRow = `<tr><td colspan="5" class="text-center py-6 text-gray-500">Bạn chưa có key nào. Hãy nạp tiền và vào mục "Thuê Key" để mua.</td></tr>`;
+        const emptyRow = `<tr><td colspan="5" class="text-center py-6 text-gray-500">Bạn chưa có key nào. Hãy nạp tiền vào STK 0332466608 và thuê key ngay.</td></tr>`;
         if (overviewTable) overviewTable.innerHTML = emptyRow;
         if (fullTable) fullTable.innerHTML = emptyRow;
         return;
@@ -797,15 +871,15 @@
       const rows = myKeys.map(k => `
         <tr class="hover:bg-brand-card/50">
           <td class="py-3 px-3 font-semibold text-white">${k.packageName}</td>
-          <td class="py-3 px-3 font-mono text-cyan-400 select-all font-bold flex items-center gap-1.5">
+          <td class="py-3 px-3 font-mono text-sky-400 select-all font-bold flex items-center gap-1.5">
             <span>${k.keyCode}</span>
             <button onclick="copyToClipboard('${k.keyCode}')" class="text-gray-400 hover:text-white" title="Sao chép">📋</button>
           </td>
-          <td class="py-3 px-3 text-gray-400 font-mono">${k.hwid || "Chưa gắn máy"}</td>
+          <td class="py-3 px-3 text-gray-400 font-mono">${k.hwid || "Chưa gắn UDID"}</td>
           <td class="py-3 px-3 text-gray-300 font-mono">${k.expiresAt}</td>
           <td class="py-3 px-3 text-right">
             <button onclick="resetHwid('${k.id}')" class="px-2.5 py-1 rounded bg-brand-border hover:bg-amber-600/30 text-amber-400 border border-amber-500/30 text-[11px] font-bold transition">
-              Đổi Máy (Reset HWID)
+              Đổi Máy (Reset UDID)
             </button>
           </td>
         </tr>
@@ -836,26 +910,26 @@
 
     function resetHwid(keyId) {
       if (hwidResets <= 0) {
-        showToast("Bạn đã hết lượt Reset HWID trong tuần này!", "danger");
+        showToast("Bạn đã hết lượt Reset UDID đổi máy trong tuần này!", "danger");
         return;
       }
 
       hwidResets -= 1;
-      localStorage.setItem("zermango_hwid_resets", hwidResets);
+      localStorage.setItem("modgameios_hwid_resets", hwidResets);
 
       const key = myKeys.find(k => k.id === keyId);
       if (key) {
-        key.hwid = "Đã Reset (Sẵn sàng cho máy mới)";
-        localStorage.setItem("zermango_keys", JSON.stringify(myKeys));
+        key.hwid = "Đã Reset (Sẵn sàng gắn iPhone/iPad mới)";
+        localStorage.setItem("modgameios_keys", JSON.stringify(myKeys));
       }
 
       updateUI();
       renderKeys();
-      showToast("Reset HWID thành công! Giờ bạn có thể mở tool trên thiết bị mới.", "success");
+      showToast("Reset UDID thành công! Giờ bạn có thể kích hoạt key trên thiết bị iOS mới.", "success");
     }
 
     function triggerFileDownload(filename) {
-      const dummyContent = `ZERMANGO PRO LAUNCHER CLIENT - OFFICIAL RELEASE\nVersion: 4.2.1\nStatus: Undetected\nTime: ${new Date().toISOString()}\n\nInstructions:\n1. Run with Administrator.\n2. Paste your active license key.\n3. Enjoy!`;
+      const dummyContent = `MODGAMEIOS VIP CLIENT - OFFICIAL RELEASE\nTarget: iOS (TrollStore / Esign / Sideloadly) & Android\nAdmin: NGUYEN NGOC ANH (MBBank: 0332466608)\nStatus: Safe & Undetected\nTime: ${new Date().toISOString()}\n\nInstructions:\n1. Open with TrollStore or Esign to sign.\n2. Paste your active license key.\n3. Enjoy!`;
       const blob = new Blob([dummyContent], { type: "text/plain" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -863,12 +937,12 @@
       a.download = filename;
       a.click();
       URL.revokeObjectURL(url);
-      showToast(`Đang tải file ${filename}...`, "success");
+      showToast(`Đang tải gói file ${filename}...`, "success");
     }
 
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
-        showToast("Đã sao chép mã Key vào bộ nhớ tạm!", "info");
+        showToast(`Đã sao chép: "${text}"`, "info");
       });
     }
 
@@ -878,7 +952,7 @@
       const toast = document.createElement("div");
       toast.className = "toast-anim p-3 rounded-xl bg-brand-card border border-brand-border text-xs flex items-center gap-2 shadow-2xl";
       
-      let badgeColor = type === 'success' ? 'text-emerald-400' : type === 'danger' ? 'text-rose-400' : 'text-cyan-400';
+      let badgeColor = type === 'success' ? 'text-emerald-400' : type === 'danger' ? 'text-rose-400' : 'text-sky-400';
       toast.innerHTML = `<span class="${badgeColor} font-bold text-sm">●</span><span class="text-white">${message}</span>`;
       container.appendChild(toast);
 

@@ -130,7 +130,7 @@
             <span class="text-[10px] px-1 rounded bg-amber-500/20 text-amber-400 font-semibold border border-amber-500/30">VIP</span>
           </div>
           <div class="text-[11px] text-gray-400 mt-0.5">
-            Số dư: <strong id="user-balance" class="text-emerald-400 font-mono">150.000 ₫</strong>
+            Số dư: <strong id="user-balance" class="text-emerald-400 font-mono text-xs">0 ₫</strong>
           </div>
         </div>
       </div>
@@ -214,11 +214,11 @@
             <div class="p-2.5 rounded-lg bg-indigo-500/20 border border-indigo-500/40 text-cyan-400 text-lg">📢</div>
             <div>
               <h4 class="text-sm font-bold text-white">Cập Nhật Phiên Bản Zermango Pro v4.2 Hoàn Tất!</h4>
-              <p class="text-xs text-gray-400 mt-0.5">Bypass 100% không bị văng game. Hãy tải lại bản cài đặt mới nhất để sử dụng ổn định.</p>
+              <p class="text-xs text-gray-400 mt-0.5">Bypass 100% không bị văng game. Nạp tiền để thuê key và tải bản cài đặt.</p>
             </div>
           </div>
-          <button onclick="switchTab('download')" class="px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition whitespace-nowrap">
-            Tải Ngay
+          <button onclick="switchTab('topup')" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition whitespace-nowrap">
+            Nạp Tiền Ngay
           </button>
         </div>
 
@@ -226,7 +226,7 @@
           <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex items-center justify-between">
             <div>
               <div class="text-xs text-gray-400 font-medium">Số Dư Khả Dụng</div>
-              <div class="text-xl font-bold text-white font-mono mt-1" id="stat-balance">150.000 ₫</div>
+              <div class="text-xl font-bold text-white font-mono mt-1" id="stat-balance">0 ₫</div>
             </div>
             <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-lg">💰</div>
           </div>
@@ -234,7 +234,7 @@
           <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex items-center justify-between">
             <div>
               <div class="text-xs text-gray-400 font-medium">Key Đang Hoạt Động</div>
-              <div class="text-xl font-bold text-cyan-400 font-mono mt-1" id="stat-active-keys">1 Key</div>
+              <div class="text-xl font-bold text-cyan-400 font-mono mt-1" id="stat-active-keys">0 Key</div>
             </div>
             <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-lg">🔑</div>
           </div>
@@ -273,8 +273,8 @@
                 <tr class="text-gray-400 border-b border-brand-border pb-2">
                   <th class="py-2.5 px-3">Tên Gói</th>
                   <th class="py-2.5 px-3">Mã Key Bản Quyền</th>
+                  <th class="py-2.5 px-3">Thiết Bị (HWID)</th>
                   <th class="py-2.5 px-3">Hạn Sử Dụng</th>
-                  <th class="py-2.5 px-3">Trạng Thái</th>
                   <th class="py-2.5 px-3 text-right">Thao Tác</th>
                 </tr>
               </thead>
@@ -407,10 +407,11 @@
       <section id="tab-topup" class="tab-pane hidden space-y-6">
         <div>
           <h2 class="text-base font-bold text-white">Nạp Tiền Vào Tài Khoản</h2>
-          <p class="text-xs text-gray-400 mt-1">Hệ thống xử lý tự động 24/7. Số dư được cộng trong 30 giây.</p>
+          <p class="text-xs text-gray-400 mt-1">Hệ thống xử lý tự động 24/7. Mỗi khi nạp, số dư của bạn sẽ được cộng dồn ngay lập tức.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Left: Nạp Ngân Hàng VietQR -->
           <div class="lg:col-span-2 p-5 rounded-2xl bg-brand-panel border border-brand-border space-y-4">
             <div class="flex items-center justify-between pb-3 border-b border-brand-border">
               <h3 class="text-sm font-bold text-white flex items-center gap-2">
@@ -419,56 +420,85 @@
               </h3>
             </div>
 
+            <!-- Mức nạp gợi ý -->
             <div>
               <label class="block text-xs font-semibold text-gray-300 mb-2">Chọn số tiền muốn nạp:</label>
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
+              <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs font-mono">
                 <button onclick="selectTopupAmount(20000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-cyan-500 text-center font-bold">20.000 ₫</button>
-                <button onclick="selectTopupAmount(50000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-cyan-500 text-center font-bold">50.000 ₫</button>
-                <button onclick="selectTopupAmount(100000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-center font-bold">100.000 ₫</button>
+                <button onclick="selectTopupAmount(50000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-center font-bold">50.000 ₫</button>
+                <button onclick="selectTopupAmount(100000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-cyan-500 text-center font-bold">100.000 ₫</button>
                 <button onclick="selectTopupAmount(250000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-cyan-500 text-center font-bold">250.000 ₫</button>
+                <button onclick="selectTopupAmount(500000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-cyan-500 text-center font-bold">500.000 ₫</button>
+              </div>
+
+              <!-- Ô nhập số tiền tùy ý -->
+              <div class="mt-3">
+                <label class="block text-[11px] text-gray-400 mb-1">Hoặc nhập số tiền tùy ý (VNĐ):</label>
+                <input
+                  id="custom-topup-input"
+                  type="number"
+                  step="10000"
+                  min="10000"
+                  placeholder="Nhập số tiền (ví dụ: 150000)..."
+                  oninput="onCustomAmountInput(this.value)"
+                  class="w-full bg-brand-card border border-brand-border rounded-lg px-3 py-2 text-xs text-white font-mono focus:border-cyan-500 focus:outline-none"
+                />
               </div>
             </div>
 
+            <!-- VietQR Display Box -->
             <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex flex-col sm:flex-row items-center gap-5">
               <div class="bg-white p-2.5 rounded-xl shadow-md flex-shrink-0">
-                <img id="topup-qr-img" src="https://img.vietqr.io/image/970422-0987654321-compact2.png?amount=100000&addInfo=NAP%20DUYKHANG&accountName=ZERMANGO%20OFFICIAL" alt="VietQR" class="w-40 h-40 object-contain rounded" />
+                <img id="topup-qr-img" src="https://img.vietqr.io/image/970422-0987654321-compact2.png?amount=50000&addInfo=NAP%20DUYKHANG&accountName=ZERMANGO%20OFFICIAL" alt="VietQR" class="w-40 h-40 object-contain rounded" />
               </div>
               <div class="text-xs space-y-2 flex-1 font-mono">
                 <div class="flex justify-between py-1 border-b border-brand-border text-gray-400">Ngân hàng: <span class="text-white font-bold">MB Bank</span></div>
                 <div class="flex justify-between py-1 border-b border-brand-border text-gray-400">Số tài khoản: <span class="text-cyan-400 font-bold select-all">0987654321</span></div>
                 <div class="flex justify-between py-1 border-b border-brand-border text-gray-400">Chủ tài khoản: <span class="text-white font-bold">ZERMANGO OFFICIAL</span></div>
-                <div class="flex justify-between py-1 border-b border-brand-border text-gray-400">Số tiền: <span id="topup-amount-display" class="text-emerald-400 font-bold">100.000 ₫</span></div>
+                <div class="flex justify-between py-1 border-b border-brand-border text-gray-400">Số tiền nạp: <span id="topup-amount-display" class="text-emerald-400 font-bold text-sm">50.000 ₫</span></div>
                 <div class="flex justify-between py-1 text-gray-400">Nội dung CK: <span class="text-amber-400 font-bold select-all">NAP DUYKHANG</span></div>
               </div>
             </div>
 
-            <button onclick="simulateTopupSuccess()" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-lg flex items-center justify-center gap-2">
-              <span>✓ Tôi Đã Chuyển Tiền (Xác Nhận Tức Thì)</span>
+            <!-- Nút xác nhận nạp tiền -->
+            <button onclick="confirmTopup()" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-lg flex items-center justify-center gap-2">
+              <span>✓ Tôi Đã Chuyển Tiền (Cộng Tiền Tức Thì)</span>
             </button>
           </div>
 
+          <!-- Right: Nạp Thẻ Cào -->
           <div class="p-5 rounded-2xl bg-brand-panel border border-brand-border space-y-4">
             <h3 class="text-sm font-bold text-white pb-3 border-b border-brand-border">🎫 Nạp Thẻ Cào Điện Thoại</h3>
             <div class="space-y-3 text-xs">
               <div>
                 <label class="block text-gray-300 mb-1">Loại thẻ</label>
-                <select class="w-full bg-brand-card border border-brand-border rounded-lg p-2 text-white">
-                  <option>Viettel (Chiết khấu 15%)</option>
-                  <option>Vinaphone</option>
-                  <option>Mobifone</option>
-                  <option>Garena</option>
+                <select id="card-type" class="w-full bg-brand-card border border-brand-border rounded-lg p-2 text-white">
+                  <option value="Viettel">Viettel</option>
+                  <option value="Vinaphone">Vinaphone</option>
+                  <option value="Mobifone">Mobifone</option>
+                  <option value="Garena">Garena</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-gray-300 mb-1">Mệnh giá thẻ</label>
+                <select id="card-value" class="w-full bg-brand-card border border-brand-border rounded-lg p-2 text-white font-mono">
+                  <option value="20000">20.000 ₫</option>
+                  <option value="50000" selected>50.000 ₫</option>
+                  <option value="100000">100.000 ₫</option>
+                  <option value="200000">200.000 ₫</option>
+                  <option value="500000">500.000 ₫</option>
                 </select>
               </div>
               <div>
                 <label class="block text-gray-300 mb-1">Mã thẻ (PIN)</label>
-                <input type="text" placeholder="Nhập mã thẻ cào..." class="w-full bg-brand-card border border-brand-border rounded-lg p-2 text-white font-mono" />
+                <input id="card-pin" type="text" placeholder="Nhập mã thẻ cào..." class="w-full bg-brand-card border border-brand-border rounded-lg p-2 text-white font-mono" />
               </div>
               <div>
                 <label class="block text-gray-300 mb-1">Số Serial</label>
-                <input type="text" placeholder="Nhập số seri..." class="w-full bg-brand-card border border-brand-border rounded-lg p-2 text-white font-mono" />
+                <input id="card-seri" type="text" placeholder="Nhập số seri..." class="w-full bg-brand-card border border-brand-border rounded-lg p-2 text-white font-mono" />
               </div>
-              <button onclick="showToast('Thẻ đang được gửi duyệt tới nhà mạng...', 'info')" class="w-full py-2 rounded-lg bg-brand-border hover:bg-indigo-600 text-white font-bold transition mt-2">
-                Gửi Thẻ Cào
+              <button onclick="submitCardTopup()" class="w-full py-2 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-bold transition mt-2">
+                Nạp Thẻ Ngay
               </button>
             </div>
           </div>
@@ -552,36 +582,20 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    let balance = parseInt(localStorage.getItem("zermango_balance")) || 150000;
-    let hwidResets = parseInt(localStorage.getItem("zermango_hwid_resets")) || 3;
-    
-    let myKeys = JSON.parse(localStorage.getItem("zermango_keys")) || [
-      {
-        id: "key-01",
-        packageName: "Gói 7 Ngày VIP",
-        keyCode: "ZMG-VIP-8892-F91A-PRO",
-        hwid: "DESKTOP-9B1K7A2",
-        expiresAt: "24/09/2026 23:59",
-        status: "Active"
-      }
-    ];
+    // ĐẶT SỐ DƯ BAN ĐẦU MẶC ĐỊNH LÀ 0
+    if (localStorage.getItem("zermango_v3_init") !== "true") {
+      localStorage.setItem("zermango_balance", 0);
+      localStorage.setItem("zermango_keys", JSON.stringify([]));
+      localStorage.setItem("zermango_tx", JSON.stringify([]));
+      localStorage.setItem("zermango_v3_init", "true");
+    }
 
-    let transactions = JSON.parse(localStorage.getItem("zermango_tx")) || [
-      {
-        time: "17/09/2026 14:20",
-        content: "Nạp tiền VietQR tự động",
-        amount: "+150.000 ₫",
-        type: "plus",
-        status: "Thành công"
-      },
-      {
-        time: "17/09/2026 14:25",
-        content: "Thuê Gói 7 Ngày VIP",
-        amount: "-90.000 ₫",
-        type: "minus",
-        status: "Thành công"
-      }
-    ];
+    let balance = parseInt(localStorage.getItem("zermango_balance")) || 0;
+    let hwidResets = parseInt(localStorage.getItem("zermango_hwid_resets")) || 3;
+    let currentTopupAmount = 50000; // Mặc định số tiền nạp đang chọn
+    
+    let myKeys = JSON.parse(localStorage.getItem("zermango_keys")) || [];
+    let transactions = JSON.parse(localStorage.getItem("zermango_tx")) || [];
 
     document.addEventListener("DOMContentLoaded", () => {
       updateUI();
@@ -624,12 +638,157 @@
       if (titles[tabId]) document.getElementById("header-title").textContent = titles[tabId];
     }
 
+    // Chọn số tiền nạp từ các nút gợi ý
+    function selectTopupAmount(amount) {
+      currentTopupAmount = amount;
+      document.getElementById("custom-topup-input").value = "";
+      
+      document.querySelectorAll(".topup-pill").forEach(btn => {
+        const matches = btn.textContent.replace(/\D/g, "") == amount;
+        btn.classList.toggle("border-cyan-500", matches);
+        btn.classList.toggle("bg-cyan-500/10", matches);
+        btn.classList.toggle("text-cyan-400", matches);
+        btn.classList.toggle("border-brand-border", !matches);
+        btn.classList.toggle("text-white", !matches);
+      });
+
+      updateTopupDisplay();
+    }
+
+    // Nhập số tiền tùy ý
+    function onCustomAmountInput(val) {
+      const num = parseInt(val);
+      if (num && num > 0) {
+        currentTopupAmount = num;
+        document.querySelectorAll(".topup-pill").forEach(btn => {
+          btn.classList.remove("border-cyan-500", "bg-cyan-500/10", "text-cyan-400");
+          btn.classList.add("border-brand-border", "text-white");
+        });
+        updateTopupDisplay();
+      }
+    }
+
+    function updateTopupDisplay() {
+      document.getElementById("topup-amount-display").textContent = formatCurrency(currentTopupAmount);
+      document.getElementById("topup-qr-img").src = `https://img.vietqr.io/image/970422-0987654321-compact2.png?amount=${currentTopupAmount}&addInfo=NAP%20DUYKHANG&accountName=ZERMANGO%20OFFICIAL`;
+    }
+
+    // XÁC NHẬN NẠP TIỀN (CỘNG DỒN TIỀN VÀO SỐ DƯ)
+    function confirmTopup() {
+      if (!currentTopupAmount || currentTopupAmount <= 0) {
+        showToast("Vui lòng chọn hoặc nhập số tiền muốn nạp!", "warning");
+        return;
+      }
+
+      // Cộng tiền trực tiếp vào tài khoản
+      balance += currentTopupAmount;
+      localStorage.setItem("zermango_balance", balance);
+
+      // Ghi lại lịch sử nạp
+      const now = new Date();
+      const timeStr = now.toLocaleDateString("vi-VN") + " " + now.toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' });
+      transactions.unshift({
+        time: timeStr,
+        content: `Nạp tiền tự động qua VietQR (${formatCurrency(currentTopupAmount)})`,
+        amount: `+${formatCurrency(currentTopupAmount)}`,
+        type: "plus",
+        status: "Thành công"
+      });
+      localStorage.setItem("zermango_tx", JSON.stringify(transactions));
+
+      updateUI();
+      renderTransactions();
+      showToast(`Nạp thành công +${formatCurrency(currentTopupAmount)} vào tài khoản! Số dư hiện tại: ${formatCurrency(balance)}`, "success");
+    }
+
+    // Nạp thẻ cào điện thoại
+    function submitCardTopup() {
+      const cardType = document.getElementById("card-type").value;
+      const cardValue = parseInt(document.getElementById("card-value").value) || 0;
+      const pin = document.getElementById("card-pin").value.trim();
+      const seri = document.getElementById("card-seri").value.trim();
+
+      if (!pin || !seri) {
+        showToast("Vui lòng nhập đầy đủ Mã PIN và Serial thẻ!", "warning");
+        return;
+      }
+
+      // Cộng tiền thẻ cào vào tài khoản
+      balance += cardValue;
+      localStorage.setItem("zermango_balance", balance);
+
+      const now = new Date();
+      const timeStr = now.toLocaleDateString("vi-VN") + " " + now.toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' });
+      transactions.unshift({
+        time: timeStr,
+        content: `Nạp thẻ cào ${cardType} (${formatCurrency(cardValue)})`,
+        amount: `+${formatCurrency(cardValue)}`,
+        type: "plus",
+        status: "Thành công"
+      });
+      localStorage.setItem("zermango_tx", JSON.stringify(transactions));
+
+      document.getElementById("card-pin").value = "";
+      document.getElementById("card-seri").value = "";
+
+      updateUI();
+      renderTransactions();
+      showToast(`Nạp thẻ ${cardType} thành công +${formatCurrency(cardValue)}!`, "success");
+    }
+
+    // Mua Key Bằng Số Dư
+    function buyKey(packageName, price, days) {
+      if (balance < price) {
+        showToast(`Số dư hiện tại (${formatCurrency(balance)}) không đủ! Vui lòng nạp thêm ${formatCurrency(price - balance)} để mua gói này.`, "danger");
+        switchTab("topup");
+        return;
+      }
+
+      balance -= price;
+      localStorage.setItem("zermango_balance", balance);
+
+      const exp = new Date();
+      exp.setDate(exp.getDate() + days);
+      const expStr = days >= 9999 ? "Vĩnh viễn (Lifetime)" : exp.toLocaleDateString("vi-VN") + " 23:59";
+
+      const randomPart1 = Math.random().toString(36).substring(2, 6).toUpperCase();
+      const randomPart2 = Math.random().toString(36).substring(2, 6).toUpperCase();
+      const newKey = {
+        id: "key-" + Date.now(),
+        packageName: packageName,
+        keyCode: `ZMG-PRO-${randomPart1}-${randomPart2}-VIP`,
+        hwid: "Chưa kích hoạt",
+        expiresAt: expStr,
+        status: "Active"
+      };
+
+      myKeys.unshift(newKey);
+      localStorage.setItem("zermango_keys", JSON.stringify(myKeys));
+
+      const now = new Date();
+      const timeStr = now.toLocaleDateString("vi-VN") + " " + now.toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' });
+      transactions.unshift({
+        time: timeStr,
+        content: `Thuê ${packageName}`,
+        amount: `-${formatCurrency(price)}`,
+        type: "minus",
+        status: "Thành công"
+      });
+      localStorage.setItem("zermango_tx", JSON.stringify(transactions));
+
+      updateUI();
+      renderKeys();
+      renderTransactions();
+      showToast(`Mua thành công ${packageName}! Đã trừ ${formatCurrency(price)}. Số dư còn lại: ${formatCurrency(balance)}`, "success");
+      switchTab("keys");
+    }
+
     function renderKeys() {
       const overviewTable = document.getElementById("overview-keys-table");
       const fullTable = document.getElementById("full-keys-table");
 
       if (myKeys.length === 0) {
-        const emptyRow = `<tr><td colspan="5" class="text-center py-6 text-gray-500">Bạn chưa có key nào. Hãy vào mục "Thuê Key" để mua ngay.</td></tr>`;
+        const emptyRow = `<tr><td colspan="5" class="text-center py-6 text-gray-500">Bạn chưa có key nào. Hãy nạp tiền và vào mục "Thuê Key" để mua.</td></tr>`;
         if (overviewTable) overviewTable.innerHTML = emptyRow;
         if (fullTable) fullTable.innerHTML = emptyRow;
         return;
@@ -660,6 +819,11 @@
       const table = document.getElementById("transactions-table");
       if (!table) return;
 
+      if (transactions.length === 0) {
+        table.innerHTML = `<tr><td colspan="4" class="text-center py-6 text-gray-500">Chưa có giao dịch nào phát sinh.</td></tr>`;
+        return;
+      }
+
       table.innerHTML = transactions.map(t => `
         <tr class="hover:bg-brand-card/50">
           <td class="py-3 px-3 text-gray-400 font-mono">${t.time}</td>
@@ -668,50 +832,6 @@
           <td class="py-3 px-3"><span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-semibold text-[10px]">${t.status}</span></td>
         </tr>
       `).join("");
-    }
-
-    function buyKey(packageName, price, days) {
-      if (balance < price) {
-        showToast("Số dư không đủ! Vui lòng nạp thêm tiền để mua gói này.", "danger");
-        switchTab("topup");
-        return;
-      }
-
-      balance -= price;
-      localStorage.setItem("zermango_balance", balance);
-
-      const exp = new Date();
-      exp.setDate(exp.getDate() + days);
-      const expStr = days >= 9999 ? "Vĩnh viễn (Lifetime)" : exp.toLocaleDateString("vi-VN") + " 23:59";
-
-      const randomPart1 = Math.random().toString(36).substring(2, 6).toUpperCase();
-      const randomPart2 = Math.random().toString(36).substring(2, 6).toUpperCase();
-      const newKey = {
-        id: "key-" + Date.now(),
-        packageName: packageName,
-        keyCode: `ZMG-PRO-${randomPart1}-${randomPart2}-VIP`,
-        hwid: "Chưa kích hoạt",
-        expiresAt: expStr,
-        status: "Active"
-      };
-
-      myKeys.unshift(newKey);
-      localStorage.setItem("zermango_keys", JSON.stringify(myKeys));
-
-      transactions.unshift({
-        time: new Date().toLocaleDateString("vi-VN") + " " + new Date().toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' }),
-        content: `Thuê ${packageName}`,
-        amount: `-${formatCurrency(price)}`,
-        type: "minus",
-        status: "Thành công"
-      });
-      localStorage.setItem("zermango_tx", JSON.stringify(transactions));
-
-      updateUI();
-      renderKeys();
-      renderTransactions();
-      showToast(`Mua thành công ${packageName}! Mã key đã được tạo.`, "success");
-      switchTab("keys");
     }
 
     function resetHwid(keyId) {
@@ -732,30 +852,6 @@
       updateUI();
       renderKeys();
       showToast("Reset HWID thành công! Giờ bạn có thể mở tool trên thiết bị mới.", "success");
-    }
-
-    function selectTopupAmount(amount) {
-      document.getElementById("topup-amount-display").textContent = formatCurrency(amount);
-      document.getElementById("topup-qr-img").src = `https://img.vietqr.io/image/970422-0987654321-compact2.png?amount=${amount}&addInfo=NAP%20DUYKHANG&accountName=ZERMANGO%20OFFICIAL`;
-    }
-
-    function simulateTopupSuccess() {
-      const addedAmount = 100000;
-      balance += addedAmount;
-      localStorage.setItem("zermango_balance", balance);
-
-      transactions.unshift({
-        time: new Date().toLocaleDateString("vi-VN") + " " + new Date().toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' }),
-        content: "Nạp tiền tự động qua VietQR",
-        amount: `+${formatCurrency(addedAmount)}`,
-        type: "plus",
-        status: "Thành công"
-      });
-      localStorage.setItem("zermango_tx", JSON.stringify(transactions));
-
-      updateUI();
-      renderTransactions();
-      showToast(`Xác nhận nạp thành công ${formatCurrency(addedAmount)} vào tài khoản!`, "success");
     }
 
     function triggerFileDownload(filename) {

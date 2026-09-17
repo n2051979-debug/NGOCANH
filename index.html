@@ -134,7 +134,7 @@
         </div>
       </div>
       <button onclick="switchTab('topup')" class="w-full mt-3 py-1.5 px-3 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-md">
-        <span>⚡ Nạp Tiền MBBank</span>
+        <span>⚡ Cập Nhật Số Tiền</span>
       </button>
     </div>
 
@@ -176,7 +176,7 @@
       <div class="flex items-center gap-2 mb-2 text-white font-semibold">
         <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Server Status: Safe 100%
       </div>
-      <p class="text-[11px] text-gray-400 leading-tight">Admin: NGUYỄN NGỌC ANH • Zalo hỗ trợ 24/7</p>
+      <p class="text-[11px] text-gray-400 leading-tight">Admin: NGUYỄN NGỌC ANH • Zalo: 0332466608</p>
     </div>
   </aside>
 
@@ -215,7 +215,7 @@
             </div>
           </div>
           <button onclick="switchTab('topup')" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition whitespace-nowrap">
-            Nạp Tiền Ngay
+            Cập Nhật Số Tiền
           </button>
         </div>
 
@@ -408,7 +408,7 @@
       <section id="tab-topup" class="tab-pane hidden space-y-6">
         <div>
           <h2 class="text-base font-bold text-white">Nạp Tiền Vào Tài Khoản ModGameiOS</h2>
-          <p class="text-xs text-gray-400 mt-1">Hệ thống chuyển khoản ngân hàng Quân Đội (MBBank) chính chủ. Quét mã QR để cộng tiền tự động.</p>
+          <p class="text-xs text-gray-400 mt-1">Chọn mệnh giá bạn muốn nạp. Sau khi chọn, bấm nút "Cập Nhật Số Tiền" để hệ thống tự động cộng dồn số dư ngay lập tức.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -429,24 +429,24 @@
 
             <!-- Mức nạp gợi ý -->
             <div>
-              <label class="block text-xs font-semibold text-gray-300 mb-2">Chọn số tiền muốn nạp:</label>
+              <label class="block text-xs font-semibold text-gray-300 mb-2">1. Chọn mệnh giá nạp:</label>
               <div class="grid grid-cols-2 sm:grid-cols-5 gap-2 text-xs font-mono">
-                <button onclick="selectTopupAmount(20000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold">20.000 ₫</button>
-                <button onclick="selectTopupAmount(50000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-sky-500 bg-sky-500/10 text-sky-400 text-center font-bold">50.000 ₫</button>
-                <button onclick="selectTopupAmount(100000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold">100.000 ₫</button>
-                <button onclick="selectTopupAmount(250000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold">250.000 ₫</button>
-                <button onclick="selectTopupAmount(500000)" class="topup-pill p-2 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold">500.000 ₫</button>
+                <button onclick="selectTopupAmount(20000)" class="topup-pill p-2.5 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold transition">20.000 ₫</button>
+                <button onclick="selectTopupAmount(50000)" class="topup-pill p-2.5 rounded-lg bg-brand-card border border-sky-500 bg-sky-500/10 text-sky-400 text-center font-bold transition">50.000 ₫</button>
+                <button onclick="selectTopupAmount(100000)" class="topup-pill p-2.5 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold transition">100.000 ₫</button>
+                <button onclick="selectTopupAmount(250000)" class="topup-pill p-2.5 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold transition">250.000 ₫</button>
+                <button onclick="selectTopupAmount(500000)" class="topup-pill p-2.5 rounded-lg bg-brand-card border border-brand-border hover:border-sky-500 text-center font-bold transition">500.000 ₫</button>
               </div>
 
               <!-- Ô nhập số tiền tùy ý -->
               <div class="mt-3">
-                <label class="block text-[11px] text-gray-400 mb-1">Hoặc nhập số tiền tùy ý (VNĐ):</label>
+                <label class="block text-[11px] text-gray-400 mb-1">Hoặc tự nhập số tiền khác (VNĐ):</label>
                 <input
                   id="custom-topup-input"
                   type="number"
                   step="10000"
                   min="10000"
-                  placeholder="Nhập số tiền (ví dụ: 150000)..."
+                  placeholder="Nhập số tiền khác (ví dụ: 150000)..."
                   oninput="onCustomAmountInput(this.value)"
                   class="w-full bg-brand-card border border-brand-border rounded-lg px-3 py-2 text-xs text-white font-mono focus:border-sky-500 focus:outline-none"
                 />
@@ -457,7 +457,6 @@
             <div class="p-4 rounded-xl bg-brand-card border border-brand-border flex flex-col sm:flex-row items-center gap-5">
               <!-- KHUNG HIỂN THỊ MÃ QR CHÍNH CHỦ MBBANK -->
               <div class="bg-white p-2.5 rounded-2xl shadow-xl flex-shrink-0 relative overflow-hidden flex flex-col items-center">
-                <!-- QR Image container -->
                 <img
                   id="topup-qr-img"
                   src="https://img.vietqr.io/image/MB-0332466608-compact2.png?amount=50000&addInfo=NAP%20MODGAMEIOS&accountName=NGUYEN%20NGOC%20ANH"
@@ -489,7 +488,7 @@
                   <span class="text-white font-bold tracking-wide">NGUYEN NGOC ANH</span>
                 </div>
                 <div class="flex justify-between py-1.5 border-b border-brand-border text-gray-400">
-                  <span>Số tiền nạp:</span>
+                  <span>Mệnh giá đã chọn:</span>
                   <span id="topup-amount-display" class="text-emerald-400 font-bold text-sm">50.000 ₫</span>
                 </div>
                 <div class="flex justify-between py-1.5 text-gray-400">
@@ -499,10 +498,10 @@
               </div>
             </div>
 
-            <!-- Nút xác nhận nạp tiền -->
-            <button onclick="confirmTopup()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-lg flex items-center justify-center gap-2">
+            <!-- NÚT CẬP NHẬT SỐ TIỀN THEO MỆNH GIÁ ĐÃ CHỌN -->
+            <button id="btn-update-balance" onclick="confirmTopup()" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-lg flex items-center justify-center gap-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-              <span>Tôi Đã Chuyển Tiền (Cộng Tiền Tức Thì Vào Số Dư)</span>
+              <span id="btn-update-balance-text">Cập Nhật Số Tiền (Cộng 50.000 ₫ Vào Tài Khoản)</span>
             </button>
           </div>
 
@@ -538,7 +537,7 @@
                 <input id="card-seri" type="text" placeholder="Nhập số seri..." class="w-full bg-brand-card border border-brand-border rounded-lg p-2 text-white font-mono" />
               </div>
               <button onclick="submitCardTopup()" class="w-full py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold transition mt-2 shadow">
-                Nạp Thẻ Ngay
+                Cập Nhật Tiền Thẻ Cào
               </button>
             </div>
           </div>
@@ -606,7 +605,7 @@
       <section id="tab-history" class="tab-pane hidden space-y-6">
         <div>
           <h2 class="text-base font-bold text-white">Lịch Sử Biến Động Số Dư & Mua Key</h2>
-          <p class="text-xs text-gray-400 mt-1">Tất cả giao dịch nạp tiền qua MBBank và thuê gói của bạn.</p>
+          <p class="text-xs text-gray-400 mt-1">Tất cả giao dịch cập nhật tiền qua MBBank và thuê gói của bạn.</p>
         </div>
 
         <div class="p-5 rounded-xl bg-brand-panel border border-brand-border">
@@ -632,7 +631,7 @@
 
   <!-- JAVASCRIPT LOGIC -->
   <script>
-    // ĐẶT SỐ DƯ BAN ĐẦU MẶC ĐỊNH LÀ 0 CHO MODGAMEIOS
+    // ĐẶT SỐ DƯ BAN ĐẦU MẶC ĐỊNH LÀ 0
     if (localStorage.getItem("modgameios_v1_init") !== "true") {
       localStorage.setItem("modgameios_balance", 0);
       localStorage.setItem("modgameios_keys", JSON.stringify([]));
@@ -651,6 +650,7 @@
       updateUI();
       renderKeys();
       renderTransactions();
+      updateTopupDisplay();
     });
 
     function formatCurrency(val) {
@@ -688,7 +688,7 @@
       if (titles[tabId]) document.getElementById("header-title").textContent = titles[tabId];
     }
 
-    // Chuyển đổi giữa QR Động và Ảnh QR Gốc của người dùng
+    // Chuyển đổi giữa QR Động và Ảnh QR Gốc
     function toggleQrMode(mode) {
       const dynamicImg = document.getElementById("topup-qr-img");
       const originalImg = document.getElementById("topup-qr-original-img");
@@ -707,12 +707,11 @@
         dynamicImg.classList.remove("hidden");
         btnDyn.classList.add("bg-sky-600", "text-white");
         btnDyn.classList.remove("text-gray-400");
-        btnOrig.classList.remove("bg-sky-600", "text-white");
-        btnOrig.classList.add("text-gray-400");
+        btnDyn.classList.add("bg-sky-600", "text-white");
       }
     }
 
-    // Chọn số tiền nạp từ các nút gợi ý
+    // Chọn số tiền nạp từ các nút gợi ý -> TỰ ĐỘNG CẬP NHẬT NÚT BẤM VÀ THÔNG TIN
     function selectTopupAmount(amount) {
       currentTopupAmount = amount;
       document.getElementById("custom-topup-input").value = "";
@@ -729,7 +728,7 @@
       updateTopupDisplay();
     }
 
-    // Nhập số tiền tùy ý
+    // Tự nhập số tiền tùy ý -> TỰ ĐỘNG CẬP NHẬT NÚT BẤM
     function onCustomAmountInput(val) {
       const num = parseInt(val);
       if (num && num > 0) {
@@ -742,16 +741,22 @@
       }
     }
 
+    // CẬP NHẬT HIỂN THỊ MỆNH GIÁ VÀ CHỮ TRÊN NÚT BẤM
     function updateTopupDisplay() {
       document.getElementById("topup-amount-display").textContent = formatCurrency(currentTopupAmount);
-      // Cập nhật mã VietQR theo STK 0332466608 - NGUYEN NGOC ANH - MBBANK
       document.getElementById("topup-qr-img").src = `https://img.vietqr.io/image/MB-0332466608-compact2.png?amount=${currentTopupAmount}&addInfo=NAP%20MODGAMEIOS&accountName=NGUYEN%20NGOC%20ANH`;
+      
+      // Cập nhật chữ trên nút xác nhận theo mệnh giá đã chọn
+      const btnText = document.getElementById("btn-update-balance-text");
+      if (btnText) {
+        btnText.textContent = `Cập Nhật Số Tiền (Cộng ${formatCurrency(currentTopupAmount)} Vào Tài Khoản)`;
+      }
     }
 
-    // XÁC NHẬN NẠP TIỀN (CỘNG DỒN TIỀN VÀO SỐ DƯ)
+    // BẤM NÚT CẬP NHẬT SỐ TIỀN: CỘNG THẲNG TIỀN VÀO SỐ DƯ
     function confirmTopup() {
       if (!currentTopupAmount || currentTopupAmount <= 0) {
-        showToast("Vui lòng chọn hoặc nhập số tiền muốn nạp!", "warning");
+        showToast("Vui lòng chọn hoặc nhập mệnh giá nạp!", "warning");
         return;
       }
 
@@ -763,7 +768,7 @@
       const timeStr = now.toLocaleDateString("vi-VN") + " " + now.toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' });
       transactions.unshift({
         time: timeStr,
-        content: `Nạp tiền qua VietQR MBBank 0332466608 (${formatCurrency(currentTopupAmount)})`,
+        content: `Cập nhật số tiền nạp VietQR MBBank (${formatCurrency(currentTopupAmount)})`,
         amount: `+${formatCurrency(currentTopupAmount)}`,
         type: "plus",
         status: "Thành công"
@@ -772,7 +777,7 @@
 
       updateUI();
       renderTransactions();
-      showToast(`Nạp thành công +${formatCurrency(currentTopupAmount)} vào tài khoản! Số dư hiện tại: ${formatCurrency(balance)}`, "success");
+      showToast(`Đã cập nhật thành công +${formatCurrency(currentTopupAmount)} vào số dư! Số dư hiện tại: ${formatCurrency(balance)}`, "success");
     }
 
     // Nạp thẻ cào điện thoại
@@ -794,7 +799,7 @@
       const timeStr = now.toLocaleDateString("vi-VN") + " " + now.toLocaleTimeString("vi-VN", { hour: '2-digit', minute: '2-digit' });
       transactions.unshift({
         time: timeStr,
-        content: `Nạp thẻ cào ${cardType} (${formatCurrency(cardValue)})`,
+        content: `Cập nhật tiền thẻ cào ${cardType} (${formatCurrency(cardValue)})`,
         amount: `+${formatCurrency(cardValue)}`,
         type: "plus",
         status: "Thành công"
@@ -806,13 +811,13 @@
 
       updateUI();
       renderTransactions();
-      showToast(`Nạp thẻ ${cardType} thành công +${formatCurrency(cardValue)}!`, "success");
+      showToast(`Cập nhật thẻ ${cardType} thành công +${formatCurrency(cardValue)}!`, "success");
     }
 
     // Mua Key Bằng Số Dư
     function buyKey(packageName, price, days) {
       if (balance < price) {
-        showToast(`Số dư hiện tại (${formatCurrency(balance)}) không đủ! Vui lòng nạp thêm ${formatCurrency(price - balance)} để thuê gói này.`, "danger");
+        showToast(`Số dư hiện tại (${formatCurrency(balance)}) không đủ! Vui lòng cập nhật thêm ${formatCurrency(price - balance)} để thuê gói này.`, "danger");
         switchTab("topup");
         return;
       }
@@ -824,7 +829,6 @@
       exp.setDate(exp.getDate() + days);
       const expStr = days >= 9999 ? "Vĩnh viễn (Lifetime)" : exp.toLocaleDateString("vi-VN") + " 23:59";
 
-      // Sinh mã key theo tiền tố ModGameiOS
       const r1 = Math.random().toString(36).substring(2, 6).toUpperCase();
       const r2 = Math.random().toString(36).substring(2, 6).toUpperCase();
       const newKey = {
